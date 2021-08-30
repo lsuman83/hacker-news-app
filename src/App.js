@@ -4,10 +4,10 @@ import {
   Switch,
   Route
  } from 'react-router-dom';
- import Navbar from './Navbar.js';
- import Search from './Search.js';
- import History from './History.js';
 
+ import NewsListContainer from '../src/containers/NewsListContainer';
+ import Navbar from '../src/components/Navbar'
+ import HistoryListContainer from '../src/containers/HistoryListContainer';
 
 function App() {
   return (
@@ -18,13 +18,13 @@ function App() {
           <Route 
             exact
             path ="/search"
-            component={Search}
+            component={NewsListContainer}
             />
           
           <Route
             exact
             path="/history"
-            component={History}
+            component={HistoryListContainer}
             />
         </Switch>
       </Router>
