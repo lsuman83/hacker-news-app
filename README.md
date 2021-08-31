@@ -1,5 +1,7 @@
 # hacker-news-app
 
+This application was built for a user to be able to search articles within Hacker News API and the application would display a list of articles within the `/search` route and then the `/history` route would display the users search history
+
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -70,4 +72,79 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 #### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Remove all Unneccessary files
+
+Use terminal or right-click and delete all files that were created through this auto-build that you do not need for your application
+
+## Add Dependencies
+
+Add dependencies that are needed for your project using `yarn add`
+
+For this application, I added `react-router-dom` and `react-redux`
+
+### 'react-router-dom`
+
+This is a npm package that allows you to import such things as `BrowserRouter` `Router` `NavLink` and so on and so forth. These libraries are useful for browser function and route function within your application
+
+### `react-redux`
+
+This is a dependency that allows you to manage the state of your application more easily. By using `createStore` `store` and other libraries you are able to maintain the state within `store` to allow your application to be more accessible throughout. You are able to map state to props through the `mapStateToProps` function and by using the `dispatch` method you are able to perform an action that will update the state within `store`.
+
+## Containers
+
+I built two seperate containers that were accessed via routing
+
+``
+        <Route 
+            exact
+            path ="/search"
+            component={NewsListContainer}
+            />
+        <Route
+            exact
+            path="/history"
+            component={HistoryListContainer}
+            />
+
+``
+And were navigated to via the use of a `NavLink` from `react-router-dom`
+
+``
+    <NavLink
+        className='p-4 inline-block'
+        exact
+        to='/search'
+        >
+        Search News
+    </NavLink>
+    <NavLink
+        className='p-4 inline-block'
+        exact
+        to='/history'
+        >
+        History
+    </NavLink>
+``
+
+within the NavBar component
+
+The first container, `NewsListContainer`, accessed three different components: The `NewsListContainer` also called the `dispatch` method and `connect` library from redux to update the state of the searchHistory array through the reducer `manageSearchHistory`.
+
+The second container, `HistoryListContainer`, accessed one component. The `HistoryListContainer` used redux to update the state of the searchHistory array by using the mapStateToProps function.
+
+## Components
+
+### `NewsListContainer` components
+
+ 1. NewsSearch - This component was used to handle the state of the user input and held the form that was used to submit to access the fetch of the API through the specified url with the given search parameter which wwas located in the Container
+
+ 2. NewsList - This component was used to handle the array of articles that were returned from the API and sent each individual article to the next component
+
+ 3. NewsArticle - This component received each article and displayed it in a particular format
+
+### `HistoryListContainer` component
+
+ 1. HistoryList - This components task was to display a list of items that had been searched for
+
 
