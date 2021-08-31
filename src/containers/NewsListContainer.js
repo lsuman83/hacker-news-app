@@ -7,8 +7,7 @@ import NewsSearch from '../../src/components/NewsSearch';
 class NewsListContainer extends React.Component {
 
     state={
-        newsList: [],
-        searchHistory: []
+        newsList: []
     }
 
     handleSearch = (query) => {
