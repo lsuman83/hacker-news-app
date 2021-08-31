@@ -3,6 +3,10 @@ import { connect } from 'react-redux';
 import HistoryList from '../components/HistoryList';
 
 class HistoryListContainer extends React.Component {
+
+    state = {
+        searchHistory: []
+    }
     render(){
         return(
             <div>
