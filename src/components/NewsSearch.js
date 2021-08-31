@@ -24,14 +24,14 @@ class NewsSearch extends React.Component {
         return(
             <form className="p-4" onSubmit={this.handleSearch}>
                 <input 
-                    className="outline-black x-4" 
+                    className="px-2 border-black border x-4" 
                     type="text"  
                     name="searchCriteria" 
                     value={this.state.newsSearchValue}
                     placeholder="Search News..." 
                     onChange={this.handleChange}
                     />
-                <button className="ml-4 px-4 opacity-200" type='submit'>
+                <button className="ml-4 px-4 bg-black text-white" type='submit'>
                     Search
                 </button>
             </form>

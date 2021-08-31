@@ -5,7 +5,7 @@ class SearchList extends React.Component {
     render() {
         return(
             <div>
-                <h1 className="p-4">
+                <h1 className="p-4 font-bold">
                     News List
                 </h1>
 

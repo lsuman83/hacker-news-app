@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 class Navbar extends React.Component {
     render(){
         return(
-            <div>
+            <nav className='bg-gray-400'>
                 <NavLink
                     className='p-4 inline-block'
                     exact
@@ -20,7 +20,7 @@ class Navbar extends React.Component {
                     >
                     History
                 </NavLink>
-            </div>
+            </nav>
         )
     }
 
